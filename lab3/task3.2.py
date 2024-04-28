@@ -10,13 +10,16 @@ def main():
     T = 100
     t = [i * Ts for i in range(0, int(T / Ts))]
     x = A * np.where(np.abs(t) <= w / 2, 1, 0)
+    df = 1 / T
     Fmax = 1 / Ts
-    f = [i * Fmax for i in range(0, Fmax)]
+    f = [i * df for i in range(0, int(Fmax / df))]
     y = np.fft.fft(x)
 
     plt.stem(t, np.abs(y))
-    
-    plt.savefig("plots/task3.1.png")
+    plt.xlabel("Time")
+    plt.ylabel("Magnitude")
+    plt.title("Modulus of the Fourier transform of the discrete signal")
+    plt.savefig("plots/task3.2.png")
 
 
 if __name__ == "__main__":
