@@ -1,0 +1,13 @@
+c=imread('cat.jpg');
+cc=c(1:end,1:end,:);
+GS=rgb2gray(cc);
+c_sp=imnoise(GS,'salt & pepper');
+a3=fspecial('average');
+a4=fspecial('average', [5,7]);
+c_sp_f3=filter2(a3,c_sp);
+c_sp_f4=filter2(a4,c_sp);
+figure;
+subplot(1,2,1);
+imshow(c_sp_f3/255);
+subplot(1,2,2);
+imshow(c_sp_f4/255);

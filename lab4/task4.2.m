@@ -1,0 +1,10 @@
+c=imread('cat.jpg');
+cc=c(1:end,1:end,:);
+IG=rgb2gray(cc);
+c_sp=imnoise(IG,'salt & pepper');
+figure;
+subplot(1,2,1);
+imshow(c_sp);
+cf=fftshift(fft2(c_sp));
+subplot(1,2,2);
+imshow(cf);

@@ -1,0 +1,10 @@
+c=imread('cat.jpg');
+cc=c(1:end,1:end,:);
+GS=rgb2gray(cc);
+f1=fspecial('average', [5,7]);
+cf1=filter2(f1,GS);
+figure;
+subplot(1,2,1);
+imshow(GS);
+subplot(1,2,2);
+imshow(cf1/255);

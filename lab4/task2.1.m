@@ -1,0 +1,11 @@
+c=imread('cat.jpg');
+cc=c(1:end,1:end,:);
+R=imhist(cc(:,:,1));
+G=imhist(cc(:,:,2));
+B=imhist(cc(:,:,3));
+figure;
+plot(R,'r');
+hold on;
+plot(G,'g');
+plot(B,'b');
+legend('Red','Green','Blue');
